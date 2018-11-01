@@ -3,7 +3,7 @@ MAINTAINER Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 RUN dnf update -y && \
     dnf install -y \
         curl \
-        g++ \
+        gcc-c++ \
         clang \
         make \
         xorg-x11-server-Xvfb \

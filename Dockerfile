@@ -14,6 +14,7 @@ RUN dnf update -y && \
         cmake \
         extra-cmake-modules \
         pkg-config \
+        qtchooser \
         qt5-qtbase-devel \
         qt5-qttools-devel \
         qt5-qtsvg-devel \
@@ -27,3 +28,4 @@ RUN dnf update -y && \
         qt5-qtxmlpatterns-devel \
         qt5-qtconnectivity-devel \
         qt5-qtquickcontrols2-devel
+ENV QT_SELECT=5

@@ -15,6 +15,7 @@ RUN dnf update -y && \
         extra-cmake-modules \
         pkg-config \
         qtchooser \
+        qt5-qtdoc \
         qt5-qtbase-devel \
         qt5-qttools-devel \
         qt5-qtsvg-devel \

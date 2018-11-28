@@ -1,7 +1,7 @@
 FROM fedora:29
 MAINTAINER Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 RUN dnf update -y && \
-    dnf install -y \
+    dnf install -y --setopt='tsflags=' \
         sudo \
         curl \
         gcc-c++ \

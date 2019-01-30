@@ -29,5 +29,7 @@ RUN dnf update -y && \
         qt5-qtdeclarative-devel \
         qt5-qtxmlpatterns-devel \
         qt5-qtconnectivity-devel \
-        qt5-qtquickcontrols2-devel
+        qt5-qtquickcontrols2-devel && \
+    # workaround for the missing renameat2 syscall
+    strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5
 ENV QT_SELECT=5

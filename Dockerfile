@@ -19,7 +19,9 @@ RUN dnf update -y && \
         pkg-config \
         qtchooser \
         qt5-qtdoc \
+        qt5-qtbase-static \
         qt5-qtbase-devel \
+        qt5-qtbase-private-devel \
         qt5-qttools-devel \
         qt5-qtsvg-devel \
         qt5-qtwayland-devel \

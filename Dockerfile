@@ -7,6 +7,7 @@ RUN dnf update -y && \
         curl \
         gcc-c++ \
         clang \
+        clazy \
         make \
         xorg-x11-server-Xvfb \
         dbus \

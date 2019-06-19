@@ -22,6 +22,7 @@ RUN dnf update -y && \
         qt5-qtbase-static \
         qt5-qtbase-devel \
         qt5-qtbase-private-devel \
+        qt5-qtdeclarative-doc \
         qt5-qttools-devel \
         qt5-qtsvg-devel \
         qt5-qtwayland-devel \

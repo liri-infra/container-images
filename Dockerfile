@@ -36,5 +36,7 @@ RUN dnf update -y && \
         qt5-qtconnectivity-devel \
         qt5-qtquickcontrols2-devel && \
     # workaround for the missing renameat2 syscall
-    strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5
+    strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5 && \
+    # Install appstream-glib
+    flatpak install --system org.freedesktop.appstream-glib
 ENV QT_SELECT=5

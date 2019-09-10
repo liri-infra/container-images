@@ -2,6 +2,7 @@ FROM fedora:30
 MAINTAINER Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 RUN dnf update -y && \
     dnf install -y --setopt='tsflags=' \
+        flatpak \
         dbus-daemon \
         findutils \
         sudo \

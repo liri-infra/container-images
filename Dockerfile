@@ -39,5 +39,6 @@ RUN dnf update -y && \
     # workaround for the missing renameat2 syscall
     strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5 && \
     # Install appstream-glib
+    flatpak remote-add --system --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
     flatpak install --system org.freedesktop.appstream-glib
 ENV QT_SELECT=5

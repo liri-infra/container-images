@@ -1,8 +1,8 @@
 build:
-	@sudo docker build -t liridev/ci-fedora --build-arg today=$(date +%s) .
+	@sudo docker build -t liridev/ci-fedora-jenkins --build-arg today=$(date +%s) .
 
 push:
-	@sudo docker push liridev/ci-fedora
+	@sudo docker push liridev/ci-fedora-jenkins
 
 all: build
 

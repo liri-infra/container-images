@@ -1,7 +1,7 @@
 Fedora CI
 =========
 
-This Docker container contains Fedora 29 for Liri CI.
+This is a Docker container with Fedora for the Liri CI.
 
 Make the image with:
 

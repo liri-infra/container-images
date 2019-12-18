@@ -37,6 +37,8 @@ RUN dnf update -y && \
         qt5-qtconnectivity-devel \
         qt5-qtquickcontrols2-devel \
         transifex-client && \
+    # Clean packages
+    dnf clean all && \
     # Workaround for the missing renameat2 syscall
     strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5 && \
     # Install appstream-glib

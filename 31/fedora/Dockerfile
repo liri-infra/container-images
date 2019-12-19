@@ -1,7 +1,7 @@
 FROM fedora:31
 MAINTAINER Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 RUN dnf update -y && \
-    dnf install -y --setopt='tsflags=' \
+    dnf install -y --setopt='tsflags=' --nodocs \
         flatpak \
         dbus-daemon \
         findutils \
@@ -41,6 +41,8 @@ RUN dnf update -y && \
     dnf clean all && \
     # Workaround for the missing renameat2 syscall
     strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5 && \
+    # Remove documentation
+    rm -rf /usr/share/{doc,info,man} && \
     # Version
     dnf --version
 ENV QT_SELECT=5

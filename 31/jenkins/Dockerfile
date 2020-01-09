@@ -1,4 +1,4 @@
-FROM liridev/ci-fedora:31
+FROM fedora:31
 MAINTAINER Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 RUN set -ex && \
     groupadd -g 1002 jenkins && \

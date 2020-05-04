@@ -2,11 +2,13 @@ ORG=liridev
 NAME=ci-fedora
 VERSION=31
 
+DOCKER ?= podman
+
 build:
-	@sudo docker build -t $(ORG)/$(NAME):$(VERSION) --build-arg today=$(date +%s) .
+	@$(DOCKER) build -t $(ORG)/$(NAME):$(VERSION) --build-arg today=$(date +%s) .
 
 push:
-	@sudo docker push $(ORG)/$(NAME):$(VERSION)
+	@$(DOCKER) push $(ORG)/$(NAME):$(VERSION) docker://docker.io/$(ORG)/$(NAME):$(VERSION)
 
 all: build
 

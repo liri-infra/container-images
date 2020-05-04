@@ -47,7 +47,9 @@ RUN zypper --non-interactive install \
     # liri-appcenter
     AppStream libAppStreamQt-devel fwupd-devel \
     # liri-text
-    sqlite3-devel sqlite3
+    sqlite3-devel sqlite3 \
+    # xdg-desktop-portal-liri
+    libpipewire-0_3-0 pipewire-devel
 # Copy build tools
 COPY build-kf5 /usr/bin
 # KF5

@@ -1,0 +1,36 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - develop
+  schedule:
+    - cron: '30 12 * * *'
+
+jobs:
+  publish:
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    strategy:
+      matrix:
+        image:
+          - fedora-31
+          - fedora-jenkins-31
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Publish to Docker Hub
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        if [ "${{ matrix.image }}" == "fedora-31" ]; then
+            name=ci-fedora
+            version=31
+        elif [ "${{ matrix.image }}" == "fedora-jenkins-31" ]; then
+            name=ci-fedora-jenkins
+            version=31
+        else
+            name=${{ matrix.image }}
+            version=latest
+        fi
+        docker build -t liridev/${name}:${version} .
+        docker push liridev/${name}:${version}

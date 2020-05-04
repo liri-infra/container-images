@@ -7,7 +7,7 @@ RUN zypper --non-interactive addrepo --priority 50 --refresh obs://KDE:Qt:5.12/o
 # Update container, import GPG key for KUQ
 RUN zypper --non-interactive --gpg-auto-import-keys -v dup
 # Install various other packages
-RUN zypper --non-interactive install which bzip2 xvfb-run
+RUN zypper --non-interactive install which bzip2 xvfb-run sudo
 # Install Python
 RUN zypper --non-interactive install python3-pip python3-lxml python3-PyYAML python3-simplejson python3-devel
 # Install git and clang

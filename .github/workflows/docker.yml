@@ -34,5 +34,6 @@ jobs:
             name=${{ matrix.image }}
             version=latest
         fi
+        cd ${{ matrix.image }}
         docker build -t liridev/${name}:${version} .
         docker push liridev/${name}:${version}

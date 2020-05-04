@@ -5,10 +5,10 @@ VERSION=latest
 DOCKER ?= podman
 
 build:
-	@$(DOCKER) build -t $(ORG)/$(NAME):$(VERSION) .
+	$(DOCKER) build -t $(ORG)/$(NAME):$(VERSION) .
 
 push:
-	@$(DOCKER) push $(ORG)/$(NAME):$(VERSION) docker://docker.io/$(ORG)/$(NAME):$(VERSION)
+	$(DOCKER) push $(ORG)/$(NAME):$(VERSION) docker://docker.io/$(ORG)/$(NAME):$(VERSION)
 
 all: build
 

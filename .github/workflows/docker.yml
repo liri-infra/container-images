@@ -15,6 +15,8 @@ jobs:
         image:
           - fedora-31
           - fedora-jenkins-31
+          - suse-qt512
+          - suse-qt514
     runs-on: ubuntu-latest
     steps:
     - name: Checkout

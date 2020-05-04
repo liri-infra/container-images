@@ -3,6 +3,8 @@ Container Images for CI
 
  * **fedora-31:** Fedora 31 with Qt
  * **fedora-jenkins-31:** Fedora 31 with Qt for jenkins
+ * **suse-qt512:** OpenSuSE with Qt 5.12
+ * **suse-qt514:** OpenSuSE with Qt 5.14
 
 ## Build
 

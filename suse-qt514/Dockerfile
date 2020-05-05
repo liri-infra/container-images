@@ -15,8 +15,10 @@ RUN zypper --non-interactive install git clang clang-devel llvm-devel clang-deve
 # Install build dependencies
 RUN zypper --non-interactive install --recommends -t pattern devel_qt5 devel_C_C++
 # The pattern is likely not enough, so just install all Qt devel packages from KUQ
+RUN sed -i 's/.*rpm.install.excludedocs.*/rpm.install.excludedocs = yes/g' /etc/zypp/zypp.conf
 RUN zypper -q se --not-installed-only --repo KDE:Qt:5.14 libqt5*devel libQt5*devel | tail -n +4 | cut -d "|" -f 2 | grep -v "libqt5-creator" | grep -vi "libqt5xdg" | grep -v "libQt5Pas" | xargs zypper --non-interactive install
 RUN zypper --non-interactive install libqt5-qtquickcontrols libqt5-qtquickcontrols2 libqt5-qtgraphicaleffects
+RUN sed -i 's/.*rpm.install.excludedocs.*/rpm.install.excludedocs = no/g' /etc/zypp/zypp.conf
 # And some other useful and base packages
 RUN zypper --non-interactive install \
     # temporarily: curl needed for appstreamcli, cmp. https://bugzilla.opensuse.org/show_bug.cgi?id=1080446

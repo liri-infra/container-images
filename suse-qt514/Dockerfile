@@ -11,7 +11,7 @@ RUN zypper --non-interactive install which bzip2 xvfb-run sudo
 # Install Python
 RUN zypper --non-interactive install python3-pip python3-lxml python3-PyYAML python3-simplejson python3-devel
 # Install git and clang
-RUN zypper --non-interactive install git clang clang-devel llvm-devel clang-devel-static
+RUN zypper --non-interactive install git clang clang-devel llvm-devel clang-devel-static clazy
 # Install build dependencies
 RUN zypper --non-interactive install --recommends -t pattern devel_qt5 devel_C_C++
 # The pattern is likely not enough, so just install all Qt devel packages from KUQ

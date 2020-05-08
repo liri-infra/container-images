@@ -6,6 +6,12 @@ Container Images for CI
  * **suse-qt512:** OpenSuSE with Qt 5.12
  * **suse-qt514:** OpenSuSE with Qt 5.14
 
+The following images don't have the documentation inside, meaning they are not
+suitable to build Qt documentation such as Fluid API documentation:
+
+ * suse-qt512
+ * suse-qt514
+
 ## Build
 
 Make the image with:

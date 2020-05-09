@@ -10,6 +10,36 @@ import requests
 import subprocess
 import sys
 
+def debug(message):
+    # https://help.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-a-debug-message
+    print(f'::debug::{message}')
+
+
+def issue_message(what, message, filename=None, line=None, col=None):
+    optional = []
+    if filename:
+        optional.append(f'file={filename}')
+    if line:
+        optional.append(f'line={line}')
+    if col:
+        optional.append(f'col={col}')
+    if optional:
+        middle = ' ' + ','.join(optional)
+    else:
+        middle = ''
+    print(f'::{what}{middle}::{message}')
+
+
+def warning(message, **kwargs):
+    # https://help.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-a-warning-message
+    issue_message('warning', message, **kwargs)
+
+
+def error(message, **kwargs):
+    # https://help.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-error-message
+    issue_message('error', message, **kwargs)
+
+
 def list_files_pr(number):
     # https://developer.github.com/v3/pulls/#list-pull-requests-files
     github_repository = os.environ['GITHUB_REPOSITORY']
@@ -54,8 +84,10 @@ def main():
 
     for filename in filenames:
         if filename.startswith(image_name):
+            debug(f'{image_name} was changed')
             return 0
 
+    warning(f'{image_name} was not changed')
     return 1
 
 

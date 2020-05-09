@@ -49,7 +49,9 @@ RUN zypper --non-interactive install \
     # liri-text
     sqlite3-devel sqlite3 \
     # xdg-desktop-portal-liri
-    libpipewire-0_3-0 pipewire-devel
+    libpipewire-0_3-0 pipewire-devel \
+    # liri-appcenter
+    libostree-devel flatpak-devel
 # Copy build tools
 COPY build-kf5 /usr/bin
 # KF5

@@ -6,6 +6,9 @@ on:
       - master
   schedule:
     - cron: '30 12 * * *'
+  repository_dispatch:
+    types:
+      - rebuild
 
 jobs:
   publish:

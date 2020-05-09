@@ -77,6 +77,15 @@ def main():
 
     os.chdir(github_workspace)
 
+    # Force rebuild in case of dispatch or schedule
+    if 'action' not in payload:
+        debug(f'No action in payload, probably a schedule event: rebuilding {image_name}')
+        return 0
+    if payload['action'] == 'rebuild':
+        debug(f'Rebuild of {image_name} was forced by dispatch event')
+        return 0
+
+    # Otherwise see if the images was changed
     if 'pull_request' in payload:
         filenames = list_files_pr(payload['pull_request']['number'])
     else:

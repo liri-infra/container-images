@@ -5,12 +5,14 @@ Container Images for CI
  * **fedora-jenkins-31:** Fedora 31 with Qt for jenkins
  * **suse-qt512:** OpenSuSE with Qt 5.12
  * **suse-qt514:** OpenSuSE with Qt 5.14
+ * **suse-qt515:** OpenSuSE with Qt 5.15
 
 The following images don't have the documentation inside, meaning they are not
 suitable to build Qt documentation such as Fluid API documentation:
 
  * suse-qt512
  * suse-qt514
+ * suse-qt515
 
 ## Build
 

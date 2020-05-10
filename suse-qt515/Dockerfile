@@ -51,7 +51,11 @@ RUN zypper --non-interactive install \
     # xdg-desktop-portal-liri
     libpipewire-0_3-0 pipewire-devel
 # Copy build tools
+COPY build-umockdev /usr/bin
 COPY build-kf5 /usr/bin
+# Other dependencies
+RUN set -ex && \
+    build-umockdev
 # KF5
 RUN set -ex && \
     kf5_ver=5.69.0 && \

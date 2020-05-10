@@ -20,6 +20,7 @@ jobs:
           - fedora-jenkins-31
           - suse-qt512
           - suse-qt514
+          - suse-qt515
     runs-on: ubuntu-latest
     steps:
     - name: Checkout

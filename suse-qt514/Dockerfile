@@ -45,13 +45,11 @@ RUN zypper --non-interactive install \
     # plymouth
     plymouth-devel \
     # liri-appcenter
-    AppStream libAppStreamQt-devel fwupd-devel \
+    AppStream libAppStreamQt-devel fwupd-devel libostree-devel flatpak-devel \
     # liri-text
     sqlite3-devel sqlite3 \
     # xdg-desktop-portal-liri
-    libpipewire-0_3-0 pipewire-devel \
-    # liri-appcenter
-    libostree-devel flatpak-devel
+    libpipewire-0_3-0 pipewire-devel
 # Copy build tools
 COPY build-kf5 /usr/bin
 # KF5

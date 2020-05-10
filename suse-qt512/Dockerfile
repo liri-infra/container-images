@@ -34,6 +34,7 @@ RUN zypper --non-interactive install \
     polkit-devel \
     # wayland
     wayland-devel \
+    wayland-protocols-devel \
     xcb-*-devel \
     libXcursor-devel \
     libgbm-devel weston \

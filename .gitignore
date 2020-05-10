@@ -1,3 +1,3 @@
-/suse-qt512/build-{kf5,umockdev}
-/suse-qt514/build-{kf5,umockdev}
-/suse-qt515/build-{kf5,umockdev}
+/suse-qt512/build-*
+/suse-qt514/build-*
+/suse-qt515/build-*

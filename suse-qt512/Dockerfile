@@ -50,7 +50,10 @@ RUN zypper --non-interactive install \
     # liri-text
     sqlite3-devel sqlite3 \
     # xdg-desktop-portal-liri
-    libpipewire-0_3-0 pipewire-devel
+    libpipewire-0_3-0 pipewire-devel \
+    # multimedia
+    gstreamer-devel gstreamer-plugins-base-devel gstreamer-plugins-bad-devel \
+    gstreamer-validate-devel gstreamer-plugin-pipewire
 # Copy build tools
 COPY build-umockdev /usr/bin
 COPY build-kf5 /usr/bin

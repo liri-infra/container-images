@@ -31,7 +31,7 @@ RUN zypper --non-interactive install \
     ModemManager-devel \
     NetworkManager-devel \
     # authentication
-    polkit-devel \
+    polkit-devel libpolkit-qt5-1-devel \
     # wayland
     wayland-devel \
     wayland-protocols-devel \

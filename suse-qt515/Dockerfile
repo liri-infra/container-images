@@ -21,6 +21,8 @@ RUN zypper --non-interactive install libqt5-qtquickcontrols libqt5-qtquickcontro
 RUN zypper --non-interactive install \
     # temporarily: curl needed for appstreamcli, cmp. https://bugzilla.opensuse.org/show_bug.cgi?id=1080446
     curl \
+    # systemd \
+    systemd-devel \
     # abi tracking software and it's dependencies
     abi-compliance-checker ctags \
     # For image thumbnails

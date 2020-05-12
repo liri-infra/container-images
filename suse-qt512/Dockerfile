@@ -57,6 +57,7 @@ RUN zypper --non-interactive install \
 # Copy build tools
 COPY build-umockdev /usr/bin
 COPY build-kf5 /usr/bin
+COPY build-kde /usr/bin
 # Other dependencies
 RUN set -ex && \
     build-umockdev

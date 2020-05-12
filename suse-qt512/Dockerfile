@@ -31,7 +31,7 @@ RUN zypper --non-interactive install \
     ModemManager-devel \
     NetworkManager-devel \
     # authentication
-    polkit-devel libpolkit-qt5-1-devel \
+    polkit-devel \
     # wayland
     wayland-devel \
     wayland-protocols-devel \
@@ -66,7 +66,8 @@ RUN set -ex && \
     build-kf5 extra-cmake-modules $kf5_ver && \
     build-kf5 solid $kf5_ver && \
     build-kf5 networkmanager-qt $kf5_ver && \
-    build-kf5 modemmanager-qt $kf5_ver
+    build-kf5 modemmanager-qt $kf5_ver && \
+    build-kde polkit-qt-1 0.113.0
 
 # For D-Bus to be willing to start it needs a Machine ID
 RUN dbus-uuidgen > /etc/machine-id

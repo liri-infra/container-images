@@ -6,6 +6,7 @@ DOCKER ?= podman
 
 build:
 	cp ../build-kf5 .
+	cp ../build-kde .
 	cp ../build-umockdev .
 	$(DOCKER) build -t $(ORG)/$(NAME):$(VERSION) .
 

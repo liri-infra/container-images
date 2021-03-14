@@ -6,6 +6,8 @@ FROM opensuse/tumbleweed
 RUN zypper --non-interactive addrepo --priority 50 --refresh obs://KDE:Qt:5.12/openSUSE_Tumbleweed KDE:Qt:5.12
 # Update container, import GPG key for KUQ
 RUN zypper --non-interactive --gpg-auto-import-keys -v dup
+# CUPS-devel at least does not like Busybox versions of some things, so ensure it is not used
+RUN zypper al busybox busybox-gzip
 # Install various other packages
 RUN zypper --non-interactive install which bzip2 xvfb-run sudo
 # Install Python

@@ -58,6 +58,8 @@ RUN zypper --non-interactive install \
     # multimedia
     gstreamer-devel gstreamer-plugins-base-devel gstreamer-plugins-bad-devel \
     gstreamer-validate-devel gstreamer-plugin-pipewire
+# Install stuff for Transifex
+RUN zypper --non-interactive install python3-pip git openssh itstool gettext-tools libqt5-linguist && pip install transifex-client polib
 # Copy build tools
 COPY build-umockdev /usr/bin
 COPY build-kf5 /usr/bin

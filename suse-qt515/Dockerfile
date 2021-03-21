@@ -57,16 +57,14 @@ RUN zypper --non-interactive install \
     libpipewire-0_3-0 pipewire-devel \
     # multimedia
     gstreamer-devel gstreamer-plugins-base-devel gstreamer-plugins-bad-devel \
-    gstreamer-validate-devel gstreamer-plugin-pipewire
+    gstreamer-validate-devel gstreamer-plugin-pipewire \
+    # udev
+    umockdev-devel
 # Install stuff for Transifex
 RUN zypper --non-interactive install python3-pip git openssh itstool gettext-tools libqt5-linguist && pip install transifex-client polib
 # Copy build tools
-COPY build-umockdev /usr/bin
 COPY build-kf5 /usr/bin
 COPY build-kde /usr/bin
-# Other dependencies
-RUN set -ex && \
-    build-umockdev
 # KF5
 RUN set -ex && \
     kf5_ver=5.69.0 && \

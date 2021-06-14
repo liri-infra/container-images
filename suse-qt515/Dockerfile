@@ -67,7 +67,7 @@ COPY build-kf5 /usr/bin
 COPY build-kde /usr/bin
 # KF5
 RUN set -ex && \
-    kf5_ver=5.82 && \
+    kf5_ver=5.82.0 && \
     build-kf5 extra-cmake-modules $kf5_ver && \
     build-kf5 solid $kf5_ver && \
     build-kf5 networkmanager-qt $kf5_ver && \

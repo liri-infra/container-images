@@ -43,6 +43,7 @@ RUN zypper --non-interactive install \
     libXcursor-devel \
     libgbm-devel weston \
     xorg-x11-server-wayland \
+    libxkbcommon-devel \
     # liri-pulseaudio
     libpulse-devel libcanberra-devel \
     # user management

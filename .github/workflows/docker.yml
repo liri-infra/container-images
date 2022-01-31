@@ -9,12 +9,16 @@ on:
 
 jobs:
   build-suse-qt515:
-    if: "!contains(github.event.head_commit.message, 'ci skip')"
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Build image and publish to Docker Hub
-      run: |
-        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd suse-qt515 && make DOCKER=docker build && make DOCKER=docker push
+    uses: ./.github/workflows/build-image.yml
+    with:
+      name: suse-qt515
+    secrets:
+      docker_username: ${{ secrets.DOCKER_USERNAME }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
+  build-suse-qt62:
+    uses: ./.github/workflows/build-image.yml
+    with:
+      name: suse-qt62
+    secrets:
+      docker_username: ${{ secrets.DOCKER_USERNAME }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}

@@ -13,7 +13,9 @@ fi
 series=$(echo $ver | awk -F. '{ print $1 "." $2 }')
 namever=${name}-${ver}
 
-curl -LO http://download.kde.org/stable/frameworks/${series}/${namever}.tar.xz
+url=http://download.kde.org/stable/frameworks/${series}/${namever}.tar.xz
+#curl -LO $url
+wget $url
 tar -xJf ${namever}.tar.xz
 cd ${namever}
 mkdir build && cd build

@@ -9,7 +9,7 @@ RUN zypper --non-interactive --gpg-auto-import-keys -v dup
 # CUPS-devel at least does not like Busybox versions of some things, so ensure it is not used
 RUN zypper al busybox busybox-gzip
 # Install various other packages
-RUN zypper --non-interactive install which bzip2 xvfb-run sudo
+RUN zypper --non-interactive install which bzip2 xvfb-run sudo curl wget
 # Install Python
 RUN zypper --non-interactive install python3-pip python3-lxml python3-PyYAML python3-simplejson python3-devel
 # Install git and clang
@@ -63,12 +63,13 @@ RUN zypper --non-interactive install \
     umockdev-devel
 # Install stuff for Transifex
 RUN zypper --non-interactive install python3-pip git openssh itstool gettext-tools libqt5-linguist && pip install transifex-client polib
+# Print version
+RUN curl --version && wget --version
 # Copy build tools
 COPY build-kf5 /usr/bin
 COPY build-kde /usr/bin
 # KF5
 RUN set -ex && \
-    curl --version && \
     kf5_ver=5.82.0 && \
     build-kf5 extra-cmake-modules $kf5_ver && \
     build-kf5 solid $kf5_ver && \

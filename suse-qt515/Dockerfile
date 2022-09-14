@@ -1,4 +1,4 @@
-# Derived from https://invent.kde.org/sysadmin/ci-tooling/-/blob/master/system-images/suse-qt515/Dockerfile
+# Derived from https://invent.kde.org/sysadmin/ci-images/-/blob/master/ci-suse-qt515/Dockerfile
 
 FROM opensuse/tumbleweed
 

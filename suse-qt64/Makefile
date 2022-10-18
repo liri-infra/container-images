@@ -1,12 +1,10 @@
 ORG=liridev
-NAME=suse-qt62
+NAME=suse-qt64
 VERSION=latest
 
 DOCKER ?= podman
 
 build:
-	cp ../build-kf5 .
-	cp ../build-kde .
 	$(DOCKER) build -t $(ORG)/$(NAME):$(VERSION) .
 
 push:

@@ -5,8 +5,6 @@ VERSION=latest
 DOCKER ?= podman
 
 build:
-	cp ../build-kf5 .
-	cp ../build-kde .
 	$(DOCKER) build -t $(ORG)/$(NAME):$(VERSION) .
 
 push:

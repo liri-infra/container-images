@@ -1,6 +1,14 @@
 name: Docker
 
 on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
   schedule:
     - cron: '30 12 * * *'
   repository_dispatch:

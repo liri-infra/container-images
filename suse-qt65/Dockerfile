@@ -1,7 +1,7 @@
-# Based off kdeorg/ci-suse-qt64
-# See https://invent.kde.org/sysadmin/ci-images/-/blob/master/ci-suse-qt64/Dockerfile
+# Based off kdeorg/suse-qt65
+# See https://invent.kde.org/sysadmin/ci-images/-/blob/master/suse-qt65/Dockerfile
 
-FROM kdeorg/ci-suse-qt64
+FROM kdeorg/suse-qt65
 
 USER root
 

@@ -1,7 +1,7 @@
-# Based off kdeorg/ci-suse-qt515
-# See https://invent.kde.org/sysadmin/ci-images/-/blob/master/ci-suse-qt515/Dockerfile
+# Based off kdeorg/suse-qt515
+# See https://invent.kde.org/sysadmin/ci-images/-/blob/master/suse-qt515/Dockerfile
 
-FROM kdeorg/ci-suse-qt515
+FROM kdeorg/suse-qt515
 
 USER root
 

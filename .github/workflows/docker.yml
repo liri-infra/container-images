@@ -24,10 +24,10 @@ jobs:
     secrets:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}
-  build-suse-qt64:
+  build-suse-qt66:
     uses: ./.github/workflows/build-image.yml
     with:
-      name: suse-qt65
+      name: suse-qt66
     secrets:
       docker_username: ${{ secrets.DOCKER_USERNAME }}
       docker_password: ${{ secrets.DOCKER_PASSWORD }}

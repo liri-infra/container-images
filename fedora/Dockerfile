@@ -5,7 +5,7 @@ USER root
 # Install packages
 RUN dnf update -y && \
     dnf install -y sudo \
-        gcc-c++ clang git cmake ninja-build \
+        gcc-c++ clang git cmake ninja-build extra-cmake-modules \
         qt6-qtbase-static qt6-qtbase-private-devel \
         qt6-qtquickcontrols2-devel \
         qt6-qtwayland-devel \

@@ -1,7 +1,5 @@
 FROM fedora:rawhide
 
-USER root
-
 # Install packages
 RUN dnf update -y && \
     dnf install -y sudo \
@@ -27,9 +25,3 @@ RUN dnf update -y && \
         flatpak-devel \
         appstream-qt-devel \
         umockdev-devel
-
-# Add group & user
-RUN groupadd -r ciuser && useradd --create-home --gid ciuser ciuser && echo 'ciuser ALL=NOPASSWD: ALL' > /etc/sudoers.d/ciuser
-USER ciuser
-WORKDIR /home/ciuser
-ENV HOME /home/ciuser

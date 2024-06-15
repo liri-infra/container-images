@@ -1,5 +1,5 @@
 ORG=liridev
-NAME=suse-qt66
+NAME=suse-qt67
 VERSION=latest
 
 DOCKER ?= podman

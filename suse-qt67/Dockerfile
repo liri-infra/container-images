@@ -1,7 +1,7 @@
-# Based off kdeorg/suse-qt66
-# See https://invent.kde.org/sysadmin/ci-images/-/blob/master/suse-qt66/Dockerfile
+# Based off kdeorg/suse-qt67
+# See https://invent.kde.org/sysadmin/ci-images/-/blob/master/suse-qt67/Dockerfile
 
-FROM invent-registry.kde.org/sysadmin/ci-images/suse-qt66:latest
+FROM invent-registry.kde.org/sysadmin/ci-images/suse-qt67:latest
 
 USER root
 

@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        name: [suse-qt515, suse-qt66, fedora, devcontainer]
+        name: [suse-qt515, suse-qt67, fedora, devcontainer]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4

@@ -23,7 +23,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        name: [suse-qt515, suse-qt67, fedora, devcontainer]
+        name: [suse-qt515, suse-qt68, fedora, devcontainer]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4

@@ -48,4 +48,5 @@ RUN dnf update -y && \
         libxkbcommon-devel \
         flatpak-devel \
         appstream-qt-devel \
-        umockdev-devel
+        umockdev-devel \
+        doxygen graphviz
